@@ -7,7 +7,6 @@ RUN set -ex \
     build-essential \
     pkg-config \
     gfortran \
-    r-base \
  ' \
  && apt-get update && apt-get install -y --no-install-recommends \
     $buildDeps \
@@ -15,6 +14,7 @@ RUN set -ex \
     wget \
     liblapack-dev \
     libopenblas-dev \
+ && apt-get install -y r-base \
  && packages=' \
     numpy \
     pandasql \
